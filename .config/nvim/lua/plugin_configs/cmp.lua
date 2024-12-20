@@ -6,6 +6,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
     sources = {
         { name = "nvim_lsp" },
+        { name = "path" },
         { name = "luasnip" },
         { name = "buffer" },
     },
@@ -29,7 +30,7 @@ cmp.setup({
     completion = {
         completeopt = 'menu,menuone,noinsert'
     },
-    formatting = cmp_format,
+    formatting = cmp.format,
 })
 
 cmp.setup.cmdline({ "/", "?" }, {

@@ -7,7 +7,8 @@ return {
     { "numToStr/Comment.nvim" },
     { "nvim-telescope/telescope.nvim",      dependencies = { "nvim-lua/plenary.nvim" } },
     { "nvim-lualine/lualine.nvim",          dependencies = { "nvim-tree/nvim-web-devicons" } },
-    
+    { "windwp/nvim-ts-autotag"},
+
     -- LSP
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
@@ -23,7 +24,7 @@ return {
     { 'saadparwaiz1/cmp_luasnip' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/cmp-nvim-lua' },
-    
+
     -- LazyGit
     {
         "kdheepak/lazygit.nvim",

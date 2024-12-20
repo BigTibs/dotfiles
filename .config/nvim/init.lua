@@ -21,7 +21,7 @@ require("lazy").setup("plugins_list")
 require("settings")
 
 -- Configure plugins
-require("plugin_configs.requires")
+require("plugins_require")
 
 -- Color scheme
 require("colorscheme")
