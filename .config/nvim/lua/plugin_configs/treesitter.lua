@@ -10,6 +10,7 @@ require 'nvim-treesitter.configs'.setup {
         "c_sharp",
         "html",
         "css",
+        "scss",
         "lua",
         "vim",
         "vimdoc",

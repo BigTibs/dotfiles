@@ -27,24 +27,24 @@ lsp_zero.set_preferences({
     }
 })
 
-local function organize_imports()
-	local params = {
-		command = "_typescript.organizeImports",
-		arguments = { vim.api.nvim_buf_get_name(0) },
-		title = "",
-	}
-	vim.lsp.buf.execute_command(params)
-end
-
-lsp_zero.configure('ts_ls', {
-    root_dir = lsp_util.root_pattern("package.json"),
-    commands = {
-      OrganizeImports = {
-        organize_imports,
-        description = "Organize Imports",
-      },
-    },
-})
+-- local function organize_imports()
+-- 	local params = {
+-- 		command = "_typescript.organizeImports",
+-- 		arguments = { vim.api.nvim_buf_get_name(0) },
+-- 		title = "",
+-- 	}
+-- 	vim.lsp.buf.execute_command(params)
+-- end
+--
+-- lsp_zero.configure('ts_ls', {
+--     root_dir = lsp_util.root_pattern("package.json"),
+--     commands = {
+--       OrganizeImports = {
+--         organize_imports,
+--         description = "Organize Imports",
+--       },
+--     },
+-- })
 
 lsp_zero.setup()
 
@@ -52,7 +52,6 @@ require("mason").setup({})
 require("mason-lspconfig").setup({
     ensure_installed = {
         'ts_ls',
-        'eslint',
         'angularls',
         'html',
         'cssls',

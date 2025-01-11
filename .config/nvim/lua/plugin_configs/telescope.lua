@@ -11,6 +11,9 @@ end,
 vim.keymap.set('n', '<leader>pb', "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>", { desc = "Open telescope buffers"})
 
 require('telescope').setup{
+    -- extensions = {
+    --     fzf = {}
+    -- },
     defaults = {
         mappings = {
             n = {
@@ -20,3 +23,5 @@ require('telescope').setup{
         }
     }
 }
+
+-- require('telescope').load_extension('fzf')
