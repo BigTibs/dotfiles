@@ -94,3 +94,10 @@ alias y='yazi'
 eval "$(zoxide init zsh)"
 
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+#Export
+export PATH=/usr/node-v22.11.0-linux-x64/bin:$PATH
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
