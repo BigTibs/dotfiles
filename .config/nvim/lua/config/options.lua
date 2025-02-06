@@ -33,4 +33,8 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
+
+-- vim.cmd[[colorscheme eldritch]]
+vim.cmd.colorscheme "eldritch"
+
 vim.opt.colorcolumn = "100"
