@@ -1,6 +1,10 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netwr" })
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+--
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netwr" })
 
-vim.keymap.set("n", "<leader>l", "<cmd>b#<CR>", { desc = "Toggle last opened buffer" })
+-- vim.keymap.set("n", "<leader>l", "<cmd>b#<CR>", { desc = "Toggle last opened buffer" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Switch line with line below" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Switch line with line above" })
@@ -28,29 +32,5 @@ vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>zz")
 -- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Don't know what that is" })
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Don't know what that is" })
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and replace" })
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make file executable" })
-
-
-
--- lsp
--- require("lsp-zero").on_attach(function(_, bufnr)
---     local opts = { buffer = bufnr, remap = false }
---     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
---     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
---     vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
---     vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
---     vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
---     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
---     vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
---     im.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
---     vim.keymap.set({ 'n', 'x' }, '<leader>f', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
---     vim.keymap.set('n', 'g.', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
--- end)
-
--- vim.keymap.set("n", "<leader><leader>", function()
---         vim.cmd("so")
---     end,
---     { desc = "Source file" })
--- vim.keymap.set("n", "<leader>g", "<cmd>LazyGit<CR>")
-
+-- vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and replace" })
+-- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make file executable" })
