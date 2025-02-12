@@ -12,8 +12,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Switch line with line abo
 vim.keymap.set("n", "J", "mzJ`z", { desc = "One line down" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page downs" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
-vim.keymap.set("n", "n", "nzzzv", { desc = "Center cursor" })
-vim.keymap.set("n", "N", "Nzzzv", { desc = "Center cursor" })
 
 -- Paste without overriding the paste register
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -27,8 +25,8 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without over
 vim.keymap.set("n", "Q", "<nop>", { desc = "Litterally does nothing" })
 -- vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format buffer" })
 
-vim.keymap.set("n", "<leader>k", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<leader>k", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<leader>j", "<cmd>cprev<CR>zz")
 -- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Don't know what that is" })
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Don't know what that is" })
 
