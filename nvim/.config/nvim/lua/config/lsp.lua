@@ -50,11 +50,17 @@ vim.lsp.config("roslyn", {
     filetypes = { "cs" },
 })
 
+vim.lsp.config("terraformls", {
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
 -- Enable the servers
 vim.lsp.enable({
     "lua_ls",
     "ts_ls",
-    "roslyn"
+    "roslyn",
+    "terraformls"
 })
 
 
