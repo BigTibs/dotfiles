@@ -31,10 +31,11 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-vim.opt.fileformats = "unix,dos" -- Otherwise, windows file have ^M at the end of line
+-- Otherwise, windows file have ^M at the end of line
+vim.opt.fileformats = "unix,dos"
 
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "80"
 
 vim.g.dotnet_errors_only = true
 vim.g.dotnet_show_project_file = true
