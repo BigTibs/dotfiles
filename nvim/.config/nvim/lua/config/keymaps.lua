@@ -11,8 +11,8 @@ vim.keymap.set('n', '<leader>lo', ':lopen<CR>', { desc = 'Open location list' })
 vim.keymap.set('n', '<leader>lc', ':lclose<CR>', { desc = 'Close location list' })
 
 
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
-vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>y", "\"+ygv<Esc>", { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<leader>Y", "\"+Ygv<Esc>", { desc = "Copy line to system clipboard" })
 vim.keymap.set('v', 'y', 'ygv<Esc>', { noremap = true })
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without overwriting register'" })
