@@ -20,7 +20,6 @@ vim.keymap.set({ "n", "v" }, "<leader>y", "\"+ygv<Esc>", { desc = "Copy to syste
 vim.keymap.set("n", "<leader>Y", "\"+Ygv<Esc>", { desc = "Copy line to system clipboard" })
 vim.keymap.set('v', 'y', 'ygv<Esc>', { noremap = true })
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without overwriting register'" })
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without overriding the paster register" })
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and replace" })

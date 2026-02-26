@@ -28,7 +28,7 @@ return {
             { "<leader>zb", "<cmd>Telekasten show_backlinks<CR>",     desc = "Show backlinks" },
             { "<leader>zI", "<cmd>Telekasten insert_img_link<CR>",    desc = "Insert image link" },
             {
-                "<leader>t",
+                "<leader>mt",
                 ":lua require('telekasten').toggle_todo({ v = true, onlyTodo = true })<CR>",
                 mode = { "v", "n" },
                 desc = "Toggle todo"
