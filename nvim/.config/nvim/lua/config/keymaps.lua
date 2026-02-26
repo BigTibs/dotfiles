@@ -10,6 +10,11 @@ vim.keymap.set('n', '<leader>cc', ':cclose<CR>', { desc = 'Close quickfix' })
 vim.keymap.set('n', '<leader>lo', ':lopen<CR>', { desc = 'Open location list' })
 vim.keymap.set('n', '<leader>lc', ':lclose<CR>', { desc = 'Close location list' })
 
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left split' })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to bottom split' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to top split' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right split' })
+vim.keymap.set('n', '<C-q>', '<C-w>q', { desc = 'Delete pane' })
 
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+ygv<Esc>", { desc = "Copy to system clipboard" })
 vim.keymap.set("n", "<leader>Y", "\"+Ygv<Esc>", { desc = "Copy line to system clipboard" })

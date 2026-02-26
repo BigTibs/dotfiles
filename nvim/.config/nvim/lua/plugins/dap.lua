@@ -59,20 +59,9 @@ return {
                 return vim.fn.input('Azure Function project root: ', cwd, 'dir')
             end
 
-            -- Setup dap-ui with custom layout
-            dapui.setup({
-                layouts = {
-                    {
-                        -- Bottom panel
-                        elements = {
-                            { id = "repl",    size = 0.5 }, -- 50% - Debug REPL
-                            { id = "console", size = 0.5 }, -- 50% - Program output
-                        },
-                        size = 10,                          -- 10 rows tall
-                        position = "bottom",
-                    },
-                },
-            })
+            -- Setup dap-ui
+            dapui.setup()
+
             -- Setup virtual text
             require('nvim-dap-virtual-text').setup()
 
@@ -97,31 +86,17 @@ return {
                 -- },
                 {
                     type = "coreclr",
-                    name = "Launch Azure Function (with Env)",
+                    name = "Launch Azure Function",
                     request = "launch",
-                    program = vim.fn.exepath('func') or 'func', -- Get full path to func
+                    program = vim.fn.exepath('func') or 'func',
                     args = { 'start', '--csharp' },
                     cwd = find_azure_function_root,
                     stopAtEntry = false,
-                    console = "externalTerminal",
-                    env = {
-                        -- Copy all your environment variables here
-                        PATH = vim.env.PATH,
-                        HOME = vim.env.HOME,
-                        -- Add any other required env vars
-                    },
+                    -- console = "externalTerminal",
+                    console = "integratedTerminal",
+                    -- env = vim.fn.environ(),
                     justMyCode = false,
                     requireExactSource = false,
-                },
-                {
-                    type = "coreclr",
-                    name = "Launch Azure Function (Custom Port)",
-                    request = "launch",
-                    program = "func",
-                    args = { 'start', '--csharp', '--port', '7072' },
-                    cwd = find_azure_function_root,
-                    stopAtEntry = false,
-                    console = "integratedTerminal",
                 },
                 {
                     type = "coreclr",
@@ -129,6 +104,7 @@ return {
                     request = "attach",
                     processId = function()
                         return require('dap.utils').pick_process({
+                            -- Function to find dotnet processes
                             filter = function(proc)
                                 local name = proc.name:lower()
 
