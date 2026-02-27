@@ -26,39 +26,6 @@ return {
             local dap = require('dap')
             local dapui = require('dapui')
 
-            -- Helper function to find Azure Function project root
-            local function find_azure_function_root()
-                local markers = { 'host.json', 'local.settings.json' }
-
-                -- Start from current buffer's directory
-                local current_file = vim.fn.expand('%:p:h')
-
-                -- Search upwards from current file
-                for _, marker in ipairs(markers) do
-                    local root = vim.fn.findfile(marker, current_file .. ';')
-                    if root ~= '' then
-                        local project_root = vim.fn.fnamemodify(root, ':h')
-                        print('Found Azure Function project at: ' .. project_root)
-                        return project_root
-                    end
-                end
-
-                -- If not found from current file, try from cwd
-                local cwd = vim.fn.getcwd()
-                for _, marker in ipairs(markers) do
-                    local root = vim.fn.findfile(marker, cwd .. ';')
-                    if root ~= '' then
-                        local project_root = vim.fn.fnamemodify(root, ':h')
-                        print('Found Azure Function project at: ' .. project_root)
-                        return project_root
-                    end
-                end
-
-                -- Last resort: prompt user
-                print('Could not find host.json or local.settings.json')
-                return vim.fn.input('Azure Function project root: ', cwd, 'dir')
-            end
-
             -- Setup dap-ui
             dapui.setup()
 
@@ -74,30 +41,6 @@ return {
 
             -- Configure C# debugging for Azure Functions
             dap.configurations.cs = {
-                -- {
-                --     type = "coreclr",
-                --     name = "Launch Azure Function",
-                --     request = "launch",
-                --     program = "func",
-                --     args = { 'start', '--csharp' },
-                --     cwd = find_azure_function_root,
-                --     stopAtEntry = false,
-                --     console = "externalTerminal",
-                -- },
-                {
-                    type = "coreclr",
-                    name = "Launch Azure Function",
-                    request = "launch",
-                    program = vim.fn.exepath('func') or 'func',
-                    args = { 'start', '--csharp' },
-                    cwd = find_azure_function_root,
-                    stopAtEntry = false,
-                    -- console = "externalTerminal",
-                    console = "integratedTerminal",
-                    -- env = vim.fn.environ(),
-                    justMyCode = false,
-                    requireExactSource = false,
-                },
                 {
                     type = "coreclr",
                     name = "Attach to Azure Function",
