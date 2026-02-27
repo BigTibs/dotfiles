@@ -8,6 +8,7 @@ return {
         dependencies = {
             'nvim-lua/plenary.nvim',
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+            'nvim-telescope/telescope-project.nvim',
         },
         keys = {
             { "<leader>ff", builtin.find_files, desc = "Telescope find files" },
@@ -24,14 +25,34 @@ return {
                 end,
                 desc = "Telescope buffers",
             },
+            {
+                "<leader>fp",
+                function()
+                    require('telescope').extensions.project.project({
+                        hidden_files = true, -- Show hidden files only for projects
+                    })
+                end,
+                desc = "Find Project"
+            },
         },
+        config = function(_, opts)
+            local telescope = require('telescope')
+
+            -- Setup with your existing opts
+            telescope.setup(opts)
+
+            -- Load extensions after setup
+            telescope.load_extension('fzf')
+            telescope.load_extension('project')
+        end,
         opts = {
             defaults = {
-                -- path_display = { "smart" },
                 layout_strategy = 'vertical',
                 layout_config = {
-                    preview_height = 0.6,
-                    mirror = true,
+                    vertical = {
+                        preview_height = 0.6,
+                        mirror = true,
+                    }
                 },
                 mappings = {
                     n = {
@@ -41,9 +62,23 @@ return {
             },
             pickers = {
                 find_files = {
-                    path_display = { "truncate" }, -- or "smart", "tail", "absolute"
+                    path_display = { "smart" }, -- or "smart", "tail", "absolute"
+                    hidden = false,
                 },
-            }
+            },
+            extensions = {
+                project = {
+                    base_dirs = {
+                        { path = '~/dev/work',     max_depth = 2 },
+                        { path = '~/dev/personal', max_depth = 3 },
+                        { path = '~/.config' },
+                    },
+                    hidden_files = true, -- Show hidden files in project picker
+                    theme = "dropdown",
+                    order_by = "recent",
+                    search_by = "title",
+                },
+            },
         },
-    }
+    },
 }
