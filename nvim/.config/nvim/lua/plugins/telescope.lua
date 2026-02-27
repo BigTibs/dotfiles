@@ -27,6 +27,7 @@ return {
         },
         opts = {
             defaults = {
+                -- path_display = { "smart" },
                 layout_strategy = 'vertical',
                 layout_config = {
                     preview_height = 0.6,
@@ -37,6 +38,11 @@ return {
                         ["d"] = actions.delete_buffer,
                     }
                 }
+            },
+            pickers = {
+                find_files = {
+                    path_display = { "truncate" }, -- or "smart", "tail", "absolute"
+                },
             }
         },
     }
