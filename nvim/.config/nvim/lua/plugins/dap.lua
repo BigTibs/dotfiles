@@ -72,6 +72,32 @@ return {
                         })
                     end,
                 },
+                {
+                    type = "coreclr",
+                    name = "Launch REST API (auto-detect)",
+                    request = "launch",
+                    program = function()
+                        -- Auto-detect the main application DLL
+                        local cwd = vim.fn.getcwd()
+                        -- Cherche spécifiquement ton DLL principal
+                        local project_name = vim.fn.fnamemodify(cwd, ':t') -- Nom du dossier actuel
+                        local dll_path = cwd .. '/bin/Debug/net8.0/' .. project_name .. '.dll'
+
+                        -- Vérifie si le fichier existe
+                        if vim.fn.filereadable(dll_path) == 1 then
+                            return dll_path
+                        end
+
+                        -- Sinon, demande à l'utilisateur
+                        return vim.fn.input('Path to DLL: ', cwd .. '/bin/Debug/net8.0/', 'file')
+                    end,
+                    cwd = '${workspaceFolder}',
+                    env = {
+                        ASPNETCORE_ENVIRONMENT = "Development",
+                        ASPNETCORE_URLS = "http://localhost:5000;https://localhost:5001"
+                    },
+                    stopAtEntry = false,
+                },
             }
 
             -- Auto-open/close UI on debug events
