@@ -10,7 +10,7 @@ return
         lackluster.setup({
             tweak_background = {
                 -- normal = 'none', -- transparent
-                normal = '#000000', -- hexcode
+                -- normal = '#000000', -- hexcode
                 -- normal = '#ffffff', -- hexcode
                 -- normal = color.green,    -- lackluster color
             },
@@ -19,7 +19,7 @@ return
                 -- string = "#a1b2c3", -- custom hexcode
                 -- string = color.green, -- lackluster color
                 string_escape = "default",
-                comment = color.gray5,
+                -- comment = color.gray5,
                 builtin = "default", -- builtin modules and functions
                 type = "default",
                 keyword = "default",
