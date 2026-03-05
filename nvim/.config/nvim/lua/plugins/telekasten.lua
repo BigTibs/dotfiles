@@ -16,7 +16,7 @@ return {
             template_new_weekly = '/home/thin6/notes/templates/weekly.md', -- template for new weekly notes
         },
         keys = {
-            { "<leader>zp", "<cmd>Telekasten panel<CR>",              desc = "Telekasten panel" },
+            { "<leader>zp", "<cmd>Telekasten panel<CR>",              desc = "Telekasten panel",  silent = true },
             { "<leader>zf", "<cmd>Telekasten find_notes<CR>",         desc = "Find notes" },
             { "<leader>zg", "<cmd>Telekasten search_notes<CR>",       desc = "Search notes" },
             { "<leader>zd", "<cmd>Telekasten goto_today<CR>",         desc = "Go to today" },
@@ -31,7 +31,7 @@ return {
                 "<leader>mt",
                 ":lua require('telekasten').toggle_todo({ v = true, onlyTodo = true })<CR>",
                 mode = { "v", "n" },
-                desc = "Toggle todo"
+                desc = "Toggle todo",
             }
         }
     },

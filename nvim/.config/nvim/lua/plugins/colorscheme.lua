@@ -14,6 +14,18 @@ return
                 -- normal = '#ffffff', -- hexcode
                 -- normal = color.green,    -- lackluster color
             },
+            tweak_syntax = {
+                string = "default",
+                -- string = "#a1b2c3", -- custom hexcode
+                -- string = color.green, -- lackluster color
+                string_escape = "default",
+                comment = color.gray5,
+                builtin = "default", -- builtin modules and functions
+                type = "default",
+                keyword = "default",
+                keyword_return = "default",
+                keyword_exception = "default",
+            },
         })
 
         vim.cmd.colorscheme("lackluster")
