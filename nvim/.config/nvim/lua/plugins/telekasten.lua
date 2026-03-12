@@ -20,7 +20,7 @@ return {
             { "<leader>zf", "<cmd>Telekasten find_notes<CR>",         desc = "Find notes" },
             { "<leader>zg", "<cmd>Telekasten search_notes<CR>",       desc = "Search notes" },
             { "<leader>zd", "<cmd>Telekasten goto_today<CR>",         desc = "Go to today" },
-            { "<leader>zw", "<cmd>Telekasten goto_thisweek<CR>",      desc = "Go to today" },
+            { "<leader>zw", "<cmd>Telekasten goto_thisweek<CR>",      desc = "Go to this week" },
             { "<leader>zz", "<cmd>Telekasten follow_link<CR>",        desc = "Follow link" },
             { "<leader>zn", "<cmd>Telekasten new_note<CR>",           desc = "New note" },
             { "<leader>zt", "<cmd>Telekasten new_templated_note<CR>", desc = "New templated note" },
