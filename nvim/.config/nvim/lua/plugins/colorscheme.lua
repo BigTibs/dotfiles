@@ -41,7 +41,7 @@ return
 {
     "tiagovla/tokyodark.nvim",
     opts = {
-        gamma = 0.80,
+        gamma = 1.00,
         styles = {
             comments = { italic = true }, -- style for comments
             keywords = {},                -- style for keywords
