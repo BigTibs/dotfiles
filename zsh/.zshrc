@@ -54,6 +54,7 @@ alias .5='cd ../../../../..'
 alias y='yazi'
 alias lg='lazygit'
 alias bat='batcat'
+alias v='nvim .'
 
 # Enable VI mode
 bindkey -v
