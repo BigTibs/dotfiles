@@ -38,23 +38,23 @@ return
 -------------------------------------------------------------------------------
 -- Tokyodark theme
 -------------------------------------------------------------------------------
-{
-    "tiagovla/tokyodark.nvim",
-    opts = {
-        gamma = 1.00,
-        styles = {
-            comments = { italic = true }, -- style for comments
-            keywords = {},                -- style for keywords
-            identifiers = {},             -- style for identifiers
-            functions = {},               -- style for functions
-            variables = {},               -- style for variables
-        },
-    },
-    config = function(_, opts)
-        require("tokyodark").setup(opts) -- calling setup is optional
-        vim.cmd("colorscheme tokyodark")
-    end,
-}
+-- {
+--     "tiagovla/tokyodark.nvim",
+--     opts = {
+--         gamma = 1.00,
+--         styles = {
+--             comments = { italic = true }, -- style for comments
+--             keywords = {},                -- style for keywords
+--             identifiers = {},             -- style for identifiers
+--             functions = {},               -- style for functions
+--             variables = {},               -- style for variables
+--         },
+--     },
+--     config = function(_, opts)
+--         require("tokyodark").setup(opts) -- calling setup is optional
+--         vim.cmd("colorscheme tokyodark")
+--     end,
+-- }
 
 -------------------------------------------------------------------------------
 -- Ashen theme
@@ -115,28 +115,23 @@ return
 -------------------------------------------------------------------------------
 --  Orng theme
 -------------------------------------------------------------------------------
--- {
---   "roerohan/orng.nvim",
---   lazy = false,
---   priority = 1000,
---   config = function()
---     require("orng").setup({
---       variant = "dark", -- "dark" or "light"
---       transparent = false,
---       italic_comment = false,
---     })
---     vim.cmd("colorscheme orng")
---   end,
--- }
+{
+    "roerohan/orng.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+        require("orng").setup({
+            variant = "dark", -- "dark" or "light"
+            transparent = false,
+            italic_comment = false,
+        })
+        vim.cmd("colorscheme orng")
+    end,
+}
 
 -------------------------------------------------------------------------------
 -- Rose pine theme
 -------------------------------------------------------------------------------
--- {
---     "water-sucks/darkrose.nvim",
---     lazy = false,
---     priority = 1000,
--- }
 -- {
 --     "rose-pine/neovim",
 --     name = "rose-pine",
