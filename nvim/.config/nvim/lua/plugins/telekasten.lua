@@ -32,6 +32,7 @@ return {
                 ":lua require('telekasten').toggle_todo({ v = true, onlyTodo = true })<CR>",
                 mode = { "v", "n" },
                 desc = "Toggle todo",
+                silent = true
             }
         }
     },
