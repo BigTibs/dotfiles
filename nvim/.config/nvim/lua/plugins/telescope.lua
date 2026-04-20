@@ -35,6 +35,7 @@ return {
                 end,
                 desc = "Find Project"
             },
+            { "<leader>fr", builtin.resume, desc = "Telescope resume" },
         },
         config = function(_, opts)
             local telescope = require('telescope')
