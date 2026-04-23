@@ -69,6 +69,18 @@ return
 -- }
 
 -------------------------------------------------------------------------------
+-- Carvion theme
+-------------------------------------------------------------------------------
+-- {
+--     "zitrocode/carvion.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {},
+--     config = function()
+--         vim.cmd("colorscheme carvion")
+--     end,
+-- }
+-------------------------------------------------------------------------------
 -- Miasma theme
 -------------------------------------------------------------------------------
 -- {
@@ -111,23 +123,48 @@ return
 --         end,
 --     },
 -- }
+-------------------------------------------------------------------------------
+--  Solarized Osaka theme
+-------------------------------------------------------------------------------
+{
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+        require("solarized-osaka").setup({
+            transparent = true,
+            styles = {
+                comments = { italic = true },
+                keywords = { italic = true },
+                functions = {},
+                variables = {},
+            },
+            day_brightness = 0.3,
+        })
+        vim.cmd.colorscheme("solarized-osaka")
+    end,
+}
 
 -------------------------------------------------------------------------------
 --  Orng theme
 -------------------------------------------------------------------------------
-{
-    "roerohan/orng.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-        require("orng").setup({
-            variant = "dark", -- "dark" or "light"
-            transparent = false,
-            italic_comment = false,
-        })
-        vim.cmd("colorscheme orng")
-    end,
-}
+-- {
+--     "roerohan/orng.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         require("orng").setup({
+--             variant = "dark", -- "dark" or "light"
+--             transparent = true,
+--             italic_comment = true,
+--         })
+--         vim.cmd("colorscheme orng")
+--         -- Magenta = #81C5A4
+--         -- Keyword = #81C5A4
+--         -- Operator = #81C5A4
+--         -- Function = #EC5B2B
+--     end,
+-- }
 
 -------------------------------------------------------------------------------
 -- Rose pine theme

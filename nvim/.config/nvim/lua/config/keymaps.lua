@@ -1,9 +1,10 @@
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Switch line with line below" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Switch line with line above" })
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
+vim.keymap.set('n', 'n', 'nzzzv', { desc = "Centre screen after searching word forwards" })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = "Centre screen after searching word backwards" })
 
-vim.keymap.set("n", "J", "mzJ`z", { desc = "One line down" })
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Merge line with the one below" })
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page downs" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
 
@@ -20,10 +21,10 @@ vim.keymap.set('n', '<C-q>', '<C-w>q', { desc = 'Close window' })
 vim.keymap.set('n', '<leader>q', '<cmd>bd!<cr>', { desc = 'Delete buffer' })
 
 -- Window resizing with repeatable keys
-vim.keymap.set('n', '<C-w>>', '10<C-w>>', { desc = 'Increase width by 10' })
-vim.keymap.set('n', '<C-w><', '10<C-w><', { desc = 'Decrease width by 10' })
-vim.keymap.set('n', '<C-w>+', '5<C-w>+', { desc = 'Increase height by 5' })
-vim.keymap.set('n', '<C-w>-', '5<C-w>-', { desc = 'Decrease height by 5' })
+vim.keymap.set('n', '<C-Up>', ':resize +2<CR>')
+vim.keymap.set('n', '<C-Down>', ':resize -2<CR>')
+vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>')
+vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
 
 
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+ygv<Esc>", { desc = "Copy to system clipboard" })
@@ -35,7 +36,8 @@ vim.keymap.set({ "v", "n" }, "p", "p`]", { silent = true })
 
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without overriding the paster register" })
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Search and replace" })
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "Search and replace entire word" })
 
 local default_vt = vim.diagnostic.config().virtual_text
 vim.keymap.set("n", "<leader>ud", function()
