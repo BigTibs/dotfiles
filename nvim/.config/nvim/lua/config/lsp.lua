@@ -13,7 +13,7 @@ local function on_attach(_, bufnr)
     end
 
     map("n", "gd", vim.lsp.buf.definition, "Go to definition")
-    map("n", "ge", vim.diagnostic.open_float, "See detailed error")
+    map("n", "go", vim.diagnostic.open_float, "See detailed error")
     map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
     map("n", "gr", vim.lsp.buf.references, "References")
     map("n", "gi", vim.lsp.buf.implementation, "Implementation")

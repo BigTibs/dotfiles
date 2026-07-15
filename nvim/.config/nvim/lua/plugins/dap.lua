@@ -27,7 +27,28 @@ return {
             local dapui = require('dapui')
 
             -- Setup dap-ui
-            dapui.setup()
+            dapui.setup({
+                layouts = {
+                    {
+                        elements = {
+                            { id = "scopes",      size = 0.25 },
+                            { id = "breakpoints", size = 0.25 },
+                            { id = "stacks",      size = 0.25 },
+                            { id = "console",     size = 0.25 },
+                        },
+                        size = 40,
+                        position = "left",
+                    },
+                    {
+                        elements = {
+                            { id = "watches", size = 0.60 },
+                            { id = "repl",    size = 0.40 },
+                        },
+                        size = 10,
+                        position = "bottom",
+                    },
+                },
+            })
 
             -- Setup virtual text
             require('nvim-dap-virtual-text').setup()

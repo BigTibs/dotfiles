@@ -36,5 +36,9 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { "cs", "fsharp" },
     callback = function()
         vim.cmd("compiler dotnet")
+        vim.opt.scroll = 8
+        vim.opt.scrolloff = 8
+        vim.opt.sidescroll = 5
+        vim.opt.sidescrolloff = 15
     end,
 })

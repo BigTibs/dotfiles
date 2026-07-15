@@ -18,7 +18,6 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to bottom split' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to top split' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right split' })
 vim.keymap.set('n', '<C-q>', '<C-w>q', { desc = 'Close window' })
-vim.keymap.set('n', '<leader>q', '<cmd>bd!<cr>', { desc = 'Delete buffer' })
 
 -- Window resizing with repeatable keys
 vim.keymap.set('n', '<C-Up>', ':resize +2<CR>')
