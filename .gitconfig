@@ -1,0 +1,14 @@
+[alias]
+	lg = log --graph --decorate --oneline --all
+	ca = commit --amend --no-edit
+	pf = push --force-with-lease
+	pr = pull --rebase
+	sb = status -sb
+[credential]
+	helper = store
+	msauthFlow = system
+[user]
+	email = thin6@premiertech.com
+	name = thin6
+[core]
+	editor = nvim
