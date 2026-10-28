@@ -1,0 +1,77 @@
+@define-color black #0f0f0f;
+@define-color gray-0 #131414;
+@define-color gray-1 #1D1F1E;
+@define-color gray-2 #272A28;
+@define-color gray-3 #3A3F3C;
+@define-color gray-4 #585F5A;
+@define-color gray-5 #6B746E;
+@define-color gray-6 #878E7A;
+@define-color gray-7 #999C8B;
+@define-color gray-8 #B6B69A;
+@define-color gray-9 #D8CCB4;
+@define-color gray-10 #E3DAC9;
+@define-color white #F9EEE5;
+@define-color light-yellow #efbe71;
+@define-color yellow #ef944d;
+
+window {
+  margin: 0;
+  border: 2px solid @light-yellow;
+  border-radius: 10px;
+  background-color: @black;
+
+  font-family: "Cascadia Mono", "JetBrains Mono", monospace;
+  font-size: 12px;
+}
+
+#outer-box {
+  margin: 0;
+  padding: 0;
+  background-color: @black;
+}
+
+#input {
+  margin: 8px;
+  padding: 8px 10px;
+  border: 1px solid @gray-3;
+  border-radius: 7px;
+
+  color: @white;
+  background-color: @gray-1;
+}
+
+#input:focus {
+  border-color: @yellow;
+  box-shadow: none;
+}
+
+#inner-box {
+  margin: 0 8px 8px;
+  background-color: transparent;
+}
+
+#scroll {
+  margin: 0;
+  padding: 0;
+}
+
+#entry {
+  padding: 7px 8px;
+  border-radius: 7px;
+  background-color: transparent;
+}
+
+#text {
+  margin: 0;
+  padding: 0;
+  color: @gray-10;
+}
+
+#entry:selected {
+  background-color: @gray-3;
+}
+
+#entry:selected #text {
+  color: @light-yellow;
+  font-weight: bold;
+}
