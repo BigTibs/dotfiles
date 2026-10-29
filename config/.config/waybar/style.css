@@ -16,9 +16,9 @@
 
 * {
   border-radius: 0px;
-  font-family: "JetBrains Mono", sans-serif;
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 16px;
   margin: 0;
   
 }
@@ -45,7 +45,7 @@ window#waybar {
   background: @gray-1;
   box-shadow: none;
   text-shadow: none;
-  padding: 2 8px;
+  padding: 2px 8px;
   margin: 0px;
   color: @yellow;
 }
@@ -69,7 +69,7 @@ window#waybar {
   color: @black;
 }
 
-#clock, #cpu, #pulseaudio, #memory, #temperature, #battery, #tray {
+#clock, #cpu, #pulseaudio, #network, #memory, #temperature, #battery, #tray {
   border: none;
   background: @black;
   box-shadow: none;
@@ -79,7 +79,7 @@ window#waybar {
   color: @white;
 }
 
-#clock:hover, #cpu:hover, #pulseaudio:hover, #memory:hover, #temperature:hover, #battery:hover, #tray:hover {
+#clock:hover, #network:hover, #cpu:hover, #pulseaudio:hover, #memory:hover, #temperature:hover, #battery:hover, #tray:hover {
   border: none;
   background: @gray-2;
   font-weight: 600;

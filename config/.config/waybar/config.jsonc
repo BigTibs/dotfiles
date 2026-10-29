@@ -1,93 +1,109 @@
-{
-	// "layer": "top", // Waybar at top layer
-	// "position": "bottom", // Waybar position (top|bottom|left|right)
-	// "height": 30, // Waybar height (to be removed for auto height)
-	// "width": 1280, // Waybar width
-	"margin-top": 0,
-	"margin-left": 0,
-	"margin-right": 0,
-	"spacing": 8,
-	"modules-left": [
-		"hyprland/workspaces"
-		// "custom/media"
-	],
-	"modules-center": [
-	],
-	"modules-right": [
-		"tray"
-		//"battery"
-	],
-	"hyprland/workspaces": {
-		"format": "{name}"
-	},
-	"tray": {
-		"icon-size": 16,
-		"spacing": 10
-	},
-	"cpu": {
-		"format": "{usage}% ",
-		"tooltip": false
-	},
-	"memory": {
-		"format": "{}% "
-	},
-	"temperature": {
-		"critical-threshold": 80,
-		"format": "{temperatureC}°C {icon}",
-		"format-icons": ["", "", ""]
-	},
-	"battery": {
-		"states": {
-			// "good": 95,
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{capacity}% {icon}",
-		"format-full": "{capacity}% {icon}",
-		"format-charging": "{capacity}% ",
-		"format-plugged": "{capacity}% ",
-		"format-alt": "{time} {icon}",
-		"format-icons": ["", "", "", "", ""]
-	},
-	"pulseaudio": {
-		"format": "{volume}% {icon}   {format_source}",
-		"format-bluetooth": "{volume}% {icon} {format_source}",
-		"format-bluetooth-muted": " {icon} {format_source}",
-		"format-muted": " {format_source}",
-		"format-source": "{volume}% ",
-		"format-source-muted": "",
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": ["", "", ""]
-		},
-		"on-click": "pavucontrol"
-	},
-	"custom/media": {
-		"format": "{icon} {}",
-		"return-type": "json",
-		"max-length": 40,
-		"format-icons": {
-			"spotify": "",
-			"default": "🎜"
-		},
-		"escape": true,
-		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-	},
-	"custom/power": {
-		"format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-		"shutdown": "shutdown",
-		"reboot": "reboot",
-		"suspend": "systemctl suspend",
-		"hibernate": "systemctl hibernate"
-		}
-	}
-}
+[
+  {
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 6,
+
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+
+    "modules-center": [
+      "clock"
+    ],
+
+    "modules-right": [
+      "memory",
+      "cpu",
+      "temperature",
+      "pulseaudio",
+      "network",
+      "battery",
+      "tray"
+    ],
+
+    "hyprland/workspaces": {
+      "format": "{name}",
+      "on-click": "activate"
+    },
+
+    "clock": {
+      "interval": 1,
+      "format": "{:%a %b %d  %H:%M}",
+      "format-alt": "{:%Y-%m-%d  %H:%M:%S}",
+      "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+      "on-click": "mode"
+    },
+
+    "memory": {
+      "interval": 5,
+      "format": "󰍛 {percentage}%",
+      "tooltip": true,
+      "tooltip-format": "Memory usage: {used:0.1f} GiB / {total:0.1f} GiB"
+    },
+
+    "cpu": {
+      "interval": 5,
+      "format": "󰻠 {usage}%",
+      "tooltip": true,
+      "tooltip-format": "CPU usage: {usage}%"
+    },
+
+    "temperature": {
+      "interval": 5,
+      "thermal-zone": 0,
+      "critical-threshold": 80,
+      "format": "󰔏 {temperatureC}°C",
+      "format-critical": "󰸁 {temperatureC}°C"
+    },
+
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-muted": "󰝟 muted",
+      "format-icons": {
+        "default": ["󰕿", "󰖀", "󰕾"]
+      },
+      "on-click": "pavucontrol",
+      "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "network": {
+      "format-wifi": "󰤨 {signalStrength}%",
+      "format-ethernet": "󰈀 connected",
+      "format-linked": "󰈀 no IP",
+      "format-disconnected": "󰤭 offline",
+      "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}%\nIP: {ipaddr}",
+      "tooltip-format-ethernet": "Ethernet\nIP: {ipaddr}"
+    },
+
+    "battery": {
+      "interval": 30,
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": "󰂄 {capacity}%",
+      "format-plugged": "󰂄 {capacity}%",
+      "format-icons": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
+    },
+
+    "tray": {
+      "icon-size": 16,
+      "spacing": 8
+    }
+  }
+]
+
