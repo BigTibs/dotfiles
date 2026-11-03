@@ -2,38 +2,38 @@ return
 -------------------------------------------------------------------------------
 -- Lackluster theme
 -------------------------------------------------------------------------------
--- {
---     "slugbyte/lackluster.nvim",
---     lazy = false,
---     priority = 1000,
---     config = function()
---         local lackluster = require("lackluster")
---         local color = lackluster.color -- blue, green, red, orange, black, lack, luster, gray1-9
---
---         lackluster.setup({
---             tweak_background = {
---                 -- normal = 'none', -- transparent
---                 -- normal = '#000000', -- hexcode
---                 -- normal = '#ffffff', -- hexcode
---                 -- normal = color.green,    -- lackluster color
---             },
---             tweak_syntax = {
---                 string = "default",
---                 -- string = "#a1b2c3", -- custom hexcode
---                 -- string = color.green, -- lackluster color
---                 string_escape = "default",
---                 -- comment = color.gray5,
---                 builtin = "default", -- builtin modules and functions
---                 type = "default",
---                 keyword = "default",
---                 keyword_return = "default",
---                 keyword_exception = "default",
---             },
---         })
---
---         vim.cmd.colorscheme("lackluster-dark")
---     end
--- }
+{
+    "slugbyte/lackluster.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+        local lackluster = require("lackluster")
+        local color = lackluster.color -- blue, green, red, orange, black, lack, luster, gray1-9
+
+        lackluster.setup({
+            tweak_background = {
+                normal = 'none', -- transparent
+                -- normal = '#000000', -- hexcode
+                -- normal = '#ffffff', -- hexcode
+                -- normal = color.green,    -- lackluster color
+            },
+            tweak_syntax = {
+                string = "default",
+                -- string = "#a1b2c3", -- custom hexcode
+                -- string = color.green, -- lackluster color
+                string_escape = "default",
+                -- comment = color.gray5,
+                builtin = "default", -- builtin modules and functions
+                type = "default",
+                keyword = "default",
+                keyword_return = "default",
+                keyword_exception = "default",
+            },
+        })
+
+        vim.cmd.colorscheme("lackluster-dark")
+    end
+}
 
 -------------------------------------------------------------------------------
 -- Tokyodark theme
@@ -126,24 +126,24 @@ return
 -------------------------------------------------------------------------------
 --  Solarized Osaka theme
 -------------------------------------------------------------------------------
-{
-    "craftzdog/solarized-osaka.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-        require("solarized-osaka").setup({
-            transparent = true,
-            styles = {
-                comments = { italic = true },
-                keywords = { italic = true },
-                functions = {},
-                variables = {},
-            },
-            day_brightness = 0.3,
-        })
-        vim.cmd.colorscheme("solarized-osaka")
-    end,
-}
+-- {
+--     "craftzdog/solarized-osaka.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         require("solarized-osaka").setup({
+--             transparent = true,
+--             styles = {
+--                 comments = { italic = true },
+--                 keywords = { italic = true },
+--                 functions = {},
+--                 variables = {},
+--             },
+--             day_brightness = 0.3,
+--         })
+--         vim.cmd.colorscheme("solarized-osaka")
+--     end,
+-- }
 
 -------------------------------------------------------------------------------
 --  Orng theme

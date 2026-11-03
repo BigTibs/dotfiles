@@ -57,29 +57,49 @@ window#waybar {
   color: @light-yellow;
 }
 
-#workspaces button.active, button.focused, #tags button.active, button.focused {
+#workspaces button.active,
+button.focused,
+#tags button.active,
+button.focused {
   border: none;
   background: @yellow;
   color: @black;
 }
 
-#workspaces button.active:hover, button.focused:hover, #tags button.active:hover, button.focused:hover {
+#workspaces button.active:hover,
+button.focused:hover,
+#tags button.active:hover,
+button.focused:hover {
   border: none;
   background: @light-yellow;
   color: @black;
 }
 
-#clock, #cpu, #pulseaudio, #network, #memory, #temperature, #battery, #tray {
+#clock,
+#cpu,
+#pulseaudio,
+#network,
+#memory,
+#temperature,
+#battery,
+#tray {
   border: none;
-  background: @black;
+  /* background: @black; */
   box-shadow: none;
   text-shadow: none;
   padding: 0 16px;
   margin: 4px;
-  color: @white;
+  color: @yellow
 }
 
-#clock:hover, #network:hover, #cpu:hover, #pulseaudio:hover, #memory:hover, #temperature:hover, #battery:hover, #tray:hover {
+#clock:hover,
+#network:hover,
+#cpu:hover,
+#pulseaudio:hover,
+#memory:hover,
+#temperature:hover,
+#battery:hover,
+#tray:hover {
   border: none;
   background: @gray-2;
   font-weight: 600;

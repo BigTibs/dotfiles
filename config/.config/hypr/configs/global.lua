@@ -1,10 +1,10 @@
 -- Set programs that you use
 terminal    = "foot"
 fileManager = "yazi"
-launcher    = "wofi -S drun -i -W 500 -H 250 -p 'Search applications' -I -t 'kitty' -s ~/.config/wofi/style.css"
+launcher    = "wofi -S drun -i -W 500 -H 250 -p 'Search applications' -I -t 'foot' -s ~/.config/wofi/style.css"
 statusBar   = "waybar"
 browser     = "firefox"
-wallpaper   = "swaybg -i /home/nico/Pictures/wallpapers/robot.jpg -m fill"
+wallpaper   = "swaybg -i /home/nico/Pictures/wallpapers/orange-wp.png -m fill"
 mainMod     = "SUPER" -- Sets "Windows" key as main modifier
 
 ---
