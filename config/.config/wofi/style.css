@@ -20,7 +20,7 @@ window {
   border-radius: 10px;
   background-color: @black;
 
-  font-family: "Cascadia Mono", "JetBrains Mono", monospace;
+  font-family: "GohuFont 14 Nerd Font", "JetBrains Mono", monospace;
   font-size: 12px;
 }
 

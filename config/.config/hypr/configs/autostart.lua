@@ -4,7 +4,7 @@
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function () 
-  hl.exec_cmd(terminal)
+  hl.exec_cmd(terminal .. " -e tmux new-session -A -s main")
   --hl.exec_cmd("nm-applet")
   hl.exec_cmd(statusBar)
   --hl.exec_cmd("waybar & hyprpaper & firefox")
